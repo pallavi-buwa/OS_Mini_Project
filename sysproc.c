@@ -47,10 +47,8 @@ struct shmid_ds
 struct ipc_perm
 {
   char* __key;          /* Key supplied to shmget(2) */
-  unsigned short mode;  /* Permissions + SHM_DEST and
-                           SHM_LOCKED flags */
+  unsigned short mode;  /* Permissions + SHM_DEST and SHM_LOCKED flags */
   unsigned short __seq; /* Sequence number */
-
 };
 
 int sys_sbrk(void)
