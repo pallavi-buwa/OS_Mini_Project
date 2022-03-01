@@ -103,6 +103,8 @@ struct segdesc {
 #ifndef __ASSEMBLER__
 typedef uint pte_t;
 
+#define NSHM 100
+
 // Task state segment format
 struct taskstate {
   uint link;         // Old ts selector
