@@ -37,6 +37,7 @@ int sys_getpid(void)
   return myproc()->pid;
 }
 
+// TO DOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 struct shmid_ds
 {
   struct ipc_perm shm_perm; /* Ownership and permissions */
@@ -50,6 +51,22 @@ struct ipc_perm
   unsigned short mode;  /* Permissions + SHM_DEST and SHM_LOCKED flags */
   unsigned short __seq; /* Sequence number */
 };
+
+int sys_shmget(){
+
+}
+
+int sys_shmat(){
+
+}
+
+int sys_shmdt(){
+
+}
+
+int sys_shmctl(){
+
+}
 
 int sys_sbrk(void)
 {
