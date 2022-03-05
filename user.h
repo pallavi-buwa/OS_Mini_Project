@@ -1,5 +1,6 @@
 struct stat;
 struct rtcdate;
+struct shmid_ds;
 
 // system calls
 int fork(void);
@@ -37,3 +38,10 @@ void* memset(void*, int, uint);
 void* malloc(uint);
 void free(void*);
 int atoi(const char*);
+
+//additional
+int shmget(char*, long, int);
+void* shmat(int, const void*, int);
+int shmdt(const void *);
+int shmctl(int, int, struct shmid_ds*); 
+
