@@ -52,19 +52,19 @@ struct ipc_perm
   unsigned short __seq; /* Sequence number */
 };
 
-int sys_shmget(){
+int sys_shmget(char* key, long size, int shmflg){
+ 
+}
+
+void* sys_shmat(int shmid, const void *shmaddr, int shmflg){
 
 }
 
-int sys_shmat(){
+int sys_shmdt(const void *shmaddr){
 
 }
 
-int sys_shmdt(){
-
-}
-
-int sys_shmctl(){
+int sys_shmctl(int shmid, int cmd, struct shmid_ds *buf){
 
 }
 
