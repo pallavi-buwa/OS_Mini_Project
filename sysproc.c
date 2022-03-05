@@ -52,8 +52,13 @@ struct ipc_perm
   unsigned short __seq; /* Sequence number */
 };
 
-int sys_shmget(char* key, long size, int shmflg){
- 
+int sys_shmget(char* key, int size, int shmflg){
+  //check if mapping with key already exists
+  PGROUNDUP(size);
+  int newsz = 0;
+  pde_t * pgdir;
+  newsz = allocshmuvm(pgdir, 0, size);
+  return newsz - size;
 }
 
 void* sys_shmat(int shmid, const void *shmaddr, int shmflg){

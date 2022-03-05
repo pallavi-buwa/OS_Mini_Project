@@ -14,3 +14,7 @@
 
 #define V2P_WO(x) ((x) - KERNBASE)    // same as V2P, but without casts
 #define P2V_WO(x) ((x) + KERNBASE)    // same as P2V, but without casts
+
+#define IPC_PRIVATE ((char*) 0)
+#define IPC_CREAT 00001000
+#define IPC_EXCL 00002000
