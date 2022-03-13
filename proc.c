@@ -114,7 +114,7 @@ found:
 
   for(int i = 0; i < SHMP; i++){
     p->shm[i].addr = 0;
-    p->shm[i].key = "";
+    p->shm[i].key = -1;
   }
 
   return p;

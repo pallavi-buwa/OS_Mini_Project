@@ -35,7 +35,7 @@ struct context {
 enum procstate { UNUSED, EMBRYO, SLEEPING, RUNNABLE, RUNNING, ZOMBIE };
 
 struct shared_pages{
-  char* key;
+  int key;
   void* addr;
 };
 
