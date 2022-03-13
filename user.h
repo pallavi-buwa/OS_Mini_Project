@@ -40,7 +40,7 @@ void free(void*);
 int atoi(const char*);
 
 //additional
-int shmget(char*, int, int);
+int shmget(int, int, int);
 void* shmat(int, const void*, int);
 int shmdt(const void *);
 int shmctl(int, int, struct shmid_ds*); 

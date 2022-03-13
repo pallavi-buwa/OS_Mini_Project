@@ -191,7 +191,8 @@ void            clearpteu(pde_t *pgdir, char *uva);
 #define NELEM(x) (sizeof(x)/sizeof((x)[0]))
 
 //additional
-int shmget(char*, int, int);
+int shmget(int, int, int);
 void* shmat(int, const void*, int);
 int shmdt(const void *);
 int shmctl(int, int, struct shmid_ds*);
+void init_shm();

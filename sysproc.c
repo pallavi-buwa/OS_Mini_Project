@@ -42,16 +42,25 @@ struct shmid_ds
 {
   struct ipc_perm shm_perm; /* Ownership and permissions */
   uint shm_size;         /* Size of segment (bytes) */
-  void* addr            //start address
-} shms[NSHM];
+  void* addr;            //start address
+  int shmid;
+  int key;          /* Key supplied to shmget(2) */
+} shms[SHMT];
 
 struct ipc_perm
 {
-  char* key;          /* Key supplied to shmget(2) */
   unsigned short mode;  /* Permissions + SHM_DEST and SHM_LOCKED flags */
 };
 
-int sys_shmget(char* key, int size, int shmflg){
+void 
+init_shm(){
+  for(int i = 0; i < SHMT; i++){
+    shms->addr = 0;
+    shms->shmid = i;
+  }
+}
+
+int sys_shmget(int key, int size, int shmflg){
   //check if mapping with key already exists
   PGROUNDUP(size);
   int newsz = 0;
