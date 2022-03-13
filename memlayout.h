@@ -8,6 +8,8 @@
 #define KERNBASE 0x80000000         // First kernel virtual address
 #define KERNLINK (KERNBASE+EXTMEM)  // Address where kernel is linked
 #define HEAPLIMIT 0x70000000        //Address till which the heap can grow
+#define SHMT 65536                  //Max number of pages in shared memory
+#define SHMP 32                     //Number of pages allowed per process to be used in shared mode
 
 #define V2P(a) (((uint) (a)) - KERNBASE)
 #define P2V(a) ((void *)(((char *) (a)) + KERNBASE))

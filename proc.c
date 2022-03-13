@@ -112,6 +112,11 @@ found:
   memset(p->context, 0, sizeof *p->context);
   p->context->eip = (uint)forkret;
 
+  for(int i = 0; i < SHMP; i++){
+    p->shm[i].addr = 0;
+    p->shm[i].key = "";
+  }
+
   return p;
 }
 
